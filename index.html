@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Multi-Step Form</title>
+</head>
+<body>
+    <div class="formbold-main-wrapper">
+        <div class="formbold-form-wrapper">
+            <form id="multiStepForm">
+                <div class="formbold-steps">
+                    <ul>
+                        <li class="formbold-step-menu active"><span>1</span> Commencer la reservation</li>
+                        <li class="formbold-step-menu"><span>2</span>La gare et la date de départ</li>
+                        <li class="formbold-step-menu"><span>3</span>Les resultat de recherche</li>
+                        <li class="formbold-step-menu"><span>4</span>Voyageurs</li>
+                        <li class="formbold-step-menu"><span>5</span>Les tickets</li>
+                    </ul>
+                </div>
+
+                <div class="formbold-form-step active">
+                    <h1>Commencer la reservation</h1>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tortor ipsum, eleifend vitae massa non, dignissim finibus eros. Maecenas non eros tristique nisl maximus sollicitudin.</p>
+                </div>
+
+                <div class="formbold-form-step">
+                    <h1 style="text-align: center; color: #2e6c8e; font-weight: 700;">La gare et la date</h1>
+
+                    <select style="margin-top: 30px; padding: 15px; width: 310px; border-radius: 8px; border: 2px solid #70afd0; color: #2e6c8e; font-weight: 700; font-size: 13pt; appearance: none;">
+                      <option value="">Sélectionnez la gare de départ</option>
+                      <option value="marrakech">Marrakech</option>
+                      <option value="casablanca">Casablanca</option>
+                    </select>
+                    
+                    <select style="margin-top: 30px; padding: 15px; width: 310px; border-radius: 8px; border: 2px solid #70afd0; color: #2e6c8e; font-weight: 700; font-size: 13pt; appearance: none;">
+                      <option value="">Sélectionnez la gare d'arrivée</option>
+                      <option value="marrakech">Marrakech</option>
+                      <option value="casablanca">Casablanca</option>
+                    </select>
+                    
+                    <input type="date" style="margin-top: 30px; padding: 15px; width: 310px; border-radius: 8px; border: 2px solid #70afd0; color: #2e6c8e; font-weight: 700; font-size: 13pt;"/>
+                    
+                </div>
+
+                <div class="formbold-form-step">
+                    <h1>Les resultat de recherche</h1>
+                    <div style="display: flex; flex-direction: column;">
+                      <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px; padding: 15px 20px; text-align: center; border-radius: 8px; box-shadow: 0px 2px 40px -15px #70afd0; border: 1px solid #70afd0; color: #2e6c8e; font-weight: 700; font-size: 13pt;">
+                          <img height="50px" src="https://beebom.com/wp-content/uploads/2018/12/Lufthansa-Logo.jpg" alt="">
+                          <span>6:30</span>
+                          <img width="50px" src="./airplane.png" alt="">
+                          <span>8:45</span>
+                      </div>
+                      <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px; padding: 15px 20px; text-align: center; border-radius: 8px; box-shadow: 0px 2px 40px -15px #70afd0; border: 1px solid #70afd0; color: #2e6c8e; font-weight: 700; font-size: 13pt;">
+                          <img height="50px" src="https://beebom.com/wp-content/uploads/2018/12/Lufthansa-Logo.jpg" alt="">
+                          <span>6:30</span>
+                          <img width="50px" src="./airplane.png" alt="">
+                          <span>8:45</span>
+                      </div>
+                      <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px; padding: 15px 20px; text-align: center; border-radius: 8px; box-shadow: 0px 2px 40px -15px #70afd0; border: 1px solid #70afd0; color: #2e6c8e; font-weight: 700; font-size: 13pt;">
+                          <img height="50px" src="https://beebom.com/wp-content/uploads/2018/12/Lufthansa-Logo.jpg" alt="">
+                          <span>6:30</span>
+                          <img width="50px" src="./airplane.png" alt="">
+                          <span>8:45</span>
+                      </div>
+                      <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px; padding: 15px 20px; text-align: center; border-radius: 8px; box-shadow: 0px 2px 40px -15px #70afd0; border: 1px solid #70afd0; color: #2e6c8e; font-weight: 700; font-size: 13pt;">
+                          <img height="50px" src="https://beebom.com/wp-content/uploads/2018/12/Lufthansa-Logo.jpg" alt="">
+                          <span>6:30</span>
+                          <img width="50px" src="./airplane.png" alt="">
+                          <span>8:45</span>
+                      </div>
+                    </div>
+                </div>
+
+                <div class="formbold-form-step">
+                    <h1>Voyageurs</h1>
+                    <div style="display: flex; justify-content: space-between; padding: 10px;">
+                        <div>
+                            <h4>Adult (Prix 500DH)</h4>
+                            <div style="display: flex; align-items: center; gap: 10px;">
+                                <button style="border-radius: 50%; width: 50px; height: 50px; font-size: 15pt; color: #2e6c8e; background-color: #a6cde2; border: 3px solid #2e6c8e;">+</button>
+                                <span>1</span>
+                                <button style="border-radius: 50%; width: 50px; height: 50px; font-size: 15pt; color: #2e6c8e; background-color: #a6cde2; border: 3px solid #2e6c8e;">-</button>
+                            </div>
+                        </div>
+                        <div style="width: 5px; background-color: #2e6c8e;"></div>
+                        <div>
+                            <h4>Enfant (Prix 100DH)</h4>
+                            <div style="display: flex; align-items: center; gap: 10px;">
+                                <button style="border-radius: 50%; width: 50px; height: 50px; font-size: 15pt; color: #2e6c8e; background-color: #a6cde2; border: 3px solid #2e6c8e;">+</button>
+                                <span>1</span>
+                                <button style="border-radius: 50%; width: 50px; height: 50px; font-size: 15pt; color: #2e6c8e; background-color: #a6cde2; border: 3px solid #2e6c8e;">-</button>
+                            </div>
+                        </div>
+                    </div>
+                    <h4>Choisissez votre place</h4>
+                    <div style="display: grid; justify-content: center; grid-template-columns: auto auto auto auto; gap: 20px;">
+                        <button style="border-radius: 5px; width: 50px; height: 50px; font-size: 15pt; color: #2e6c8e; background-color: #a6cde2; border: 3px solid #2e6c8e;">-</button>
+                        <button style="border-radius: 5px; width: 50px; height: 50px; font-size: 15pt; color: #2e6c8e; background-color: #a6cde2; border: 3px solid #2e6c8e;">-</button>
+                        <button style="border-radius: 5px; width: 50px; height: 50px; font-size: 15pt; color: #2e6c8e; background-color: #a6cde2; border: 3px solid #2e6c8e;">-</button>
+                        <button style="border-radius: 5px; width: 50px; height: 50px; font-size: 15pt; color: #2e6c8e; background-color: #a6cde2; border: 3px solid #2e6c8e;">-</button>
+                        <button style="border-radius: 5px; width: 50px; height: 50px; font-size: 15pt; color: #2e6c8e; background-color: #a6cde2; border: 3px solid #2e6c8e;">-</button>
+                        <button style="border-radius: 5px; width: 50px; height: 50px; font-size: 15pt; color: #2e6c8e; background-color: #a6cde2; border: 3px solid #2e6c8e;">-</button>
+                        <button style="border-radius: 5px; width: 50px; height: 50px; font-size: 15pt; color: #2e6c8e; background-color: #a6cde2; border: 3px solid #2e6c8e;">-</button>
+                        <button style="border-radius: 5px; width: 50px; height: 50px; font-size: 15pt; color: #2e6c8e; background-color: #a6cde2; border: 3px solid #2e6c8e;">-</button>
+                    </div>
+                    <h4>Prix Total : 0000DH</h4>
+
+                </div>
+
+                <div class="formbold-form-step">
+                    <h1>Les tickets</h1>
+              
+                    <div style="height: 500px;display: flex; justify-content: center; align-items: center;">
+                    <div class="card content">
+                      <div class="user-info">
+                        <p>Nom et prénom : <span>AZIZ</span></p>
+                        <p>E-mail : <span>test.aziz@gmail.com</span></p>
+                        <p>Date de réservation : <span>12/15/48</span></p>
+                        <p>Prix : <span>00000DH</span></p>
+                      </div>
+                      <div class="qr-code">
+                        <p>Code QR :</p>
+                        <img src="qr-code.svg" alt="code QR"/>
+                      </div>
+                    </div>
+                    </div>
+                </div>
+
+                <div class="formbold-form-btn-wrapper">
+                    <button type="button" class="formbold-back-btn">Back</button>
+                    <button type="button" class="formbold-next-btn">Next Step</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+}
+
+.formbold-main-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 48px;
+}
+
+.formbold-form-wrapper {
+    margin: 0 auto;
+    max-width: 1000px;
+    width: 100%;
+    background: white;
+    border: 1px solid #DDE3EC;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.formbold-steps {
+    padding-bottom: 18px;
+    margin-bottom: 35px;
+    border-bottom: 1px solid #DDE3EC;
+}
+
+.formbold-steps ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.formbold-steps li {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color: #536387;
+}
+
+.formbold-steps li span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #DDE3EC;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color: #536387;
+}
+
+.formbold-steps li.active {
+    color: #07074D;
+}
+
+.formbold-steps li.active span {
+    background: #6A64F1;
+    color: #FFFFFF;
+}
+
+.formbold-form-step {
+    display: none;
+}
+
+.formbold-form-step.active {
+    display: block;
+}
+
+.formbold-form-btn-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 25px;
+}
+
+.formbold-back-btn, .formbold-next-btn {
+    cursor: pointer;
+    padding: 10px 20px;
+    background-color: #6A64F1;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+.formbold-back-btn {
+    background-color: #DDE3EC;
+    color: #07074D;
+}

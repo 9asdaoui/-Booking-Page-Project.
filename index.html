@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
     <link rel="stylesheet" href="styles.css">
     <title>Multi-Step Form</title>
 </head>
@@ -12,40 +15,46 @@
             <form id="multiStepForm">
                 <div class="formbold-steps">
                     <ul>
-                        <li class="formbold-step-menu active"><span>1</span> Commencer la reservation</li>
-                        <li class="formbold-step-menu"><span>2</span>La gare et la date de départ</li>
-                        <li class="formbold-step-menu"><span>3</span>Les resultat de recherche</li>
-                        <li class="formbold-step-menu"><span>4</span>Voyageurs</li>
-                        <li class="formbold-step-menu"><span>5</span>Les tickets</li>
+                        <li class="formbold-step-menu active"><span>1</span>Reservation</li>
+                        <li class="formbold-step-menu"><span>2</span>Station and Date</li>
+                        <li class="formbold-step-menu"><span>3</span>Results</li>
+                        <li class="formbold-step-menu"><span>4</span>Travelers</li>
+                        <li class="formbold-step-menu"><span>5</span>Tickets</li>
                     </ul>
                 </div>
 
-                <div class="formbold-form-step active">
-                    <h1>Commencer la reservation</h1>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tortor ipsum, eleifend vitae massa non, dignissim finibus eros. Maecenas non eros tristique nisl maximus sollicitudin.</p>
+                <div class="formbold-form-step">
+                    <h1>Start the Reservation</h1>
+              <p>To begin your booking, select your departure station and the desired travel date. Once you’ve made your selections, you’ll be able to search for available trips and view the best options based on your preferences. Fill in your traveler details to proceed, and you’ll receive your tickets upon confirmation.</p>
                 </div>
 
                 <div class="formbold-form-step">
-                    <h1 style="text-align: center; color: #2e6c8e; font-weight: 700;">La gare et la date</h1>
+                    <h1 style="text-align: center; color: #2e6c8e; font-weight: 700;">Station and Date</h1>
 
-                    <select style="margin-top: 30px; padding: 15px; width: 310px; border-radius: 8px; border: 2px solid #70afd0; color: #2e6c8e; font-weight: 700; font-size: 13pt; appearance: none;">
-                      <option value="">Sélectionnez la gare de départ</option>
+                    <select id="depar" style="margin-top: 30px; padding: 15px; width: 310px; border-radius: 8px; border: 2px solid #70afd0; color: #2e6c8e; font-weight: 700; font-size: 13pt; appearance: none;">
+                      <option value="">Select the departure station</option>
                       <option value="marrakech">Marrakech</option>
                       <option value="casablanca">Casablanca</option>
+                      <option value="marrakech">Agadir</option>
+                      <option value="casablanca">Rabat</option>
+                      <option value="casablanca">Sale</option>
                     </select>
                     
-                    <select style="margin-top: 30px; padding: 15px; width: 310px; border-radius: 8px; border: 2px solid #70afd0; color: #2e6c8e; font-weight: 700; font-size: 13pt; appearance: none;">
-                      <option value="">Sélectionnez la gare d'arrivée</option>
+                    <select id="arrive" style="margin-top: 30px; padding: 15px; width: 310px; border-radius: 8px; border: 2px solid #70afd0; color: #2e6c8e; font-weight: 700; font-size: 13pt; appearance: none;">
+                      <option value="">Select the arrival station</option>
                       <option value="marrakech">Marrakech</option>
                       <option value="casablanca">Casablanca</option>
+                      <option value="marrakech">Agadir</option>
+                      <option value="casablanca">Rabat</option>
+                      <option value="casablanca">Sale</option>
                     </select>
                     
-                    <input type="date" style="margin-top: 30px; padding: 15px; width: 310px; border-radius: 8px; border: 2px solid #70afd0; color: #2e6c8e; font-weight: 700; font-size: 13pt;"/>
+                    <input id="date" type="date" style="margin-top: 30px; padding: 15px; width: 310px; border-radius: 8px; border: 2px solid #70afd0; color: #2e6c8e; font-weight: 700; font-size: 13pt;"/>
                     
                 </div>
 
                 <div class="formbold-form-step">
-                    <h1>Les resultat de recherche</h1>
+                    <h1>Search Results</h1>
                     <div style="display: flex; flex-direction: column;">
                       <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px; padding: 15px 20px; text-align: center; border-radius: 8px; box-shadow: 0px 2px 40px -15px #70afd0; border: 1px solid #70afd0; color: #2e6c8e; font-weight: 700; font-size: 13pt;">
                           <img height="50px" src="https://beebom.com/wp-content/uploads/2018/12/Lufthansa-Logo.jpg" alt="">
@@ -75,63 +84,54 @@
                 </div>
 
                 <div class="formbold-form-step">
-                    <h1>Voyageurs</h1>
+                    <h1>Travelers</h1>
                     <div style="display: flex; justify-content: space-between; padding: 10px;">
                         <div>
                             <h4>Adult (Prix 500DH)</h4>
                             <div style="display: flex; align-items: center; gap: 10px;">
-                                <button style="border-radius: 50%; width: 50px; height: 50px; font-size: 15pt; color: #2e6c8e; background-color: #a6cde2; border: 3px solid #2e6c8e;">+</button>
-                                <span>1</span>
-                                <button style="border-radius: 50%; width: 50px; height: 50px; font-size: 15pt; color: #2e6c8e; background-color: #a6cde2; border: 3px solid #2e6c8e;">-</button>
+                                <button type="button" onclick="plus1()" style="border-radius: 50%; width: 50px; height: 50px; font-size: 15pt; color: #2e6c8e; background-color: #a6cde2; border: 3px solid #2e6c8e;">+</button>
+                                <span id="number1">0</span>
+                                <button type="button" onclick="mins1()" style="border-radius: 50%; width: 50px; height: 50px; font-size: 15pt; color: #2e6c8e; background-color: #a6cde2; border: 3px solid #2e6c8e;">-</button>
                             </div>
                         </div>
                         <div style="width: 5px; background-color: #2e6c8e;"></div>
                         <div>
-                            <h4>Enfant (Prix 100DH)</h4>
+                            <h4>Child (Price 100DH)</h4>
                             <div style="display: flex; align-items: center; gap: 10px;">
-                                <button style="border-radius: 50%; width: 50px; height: 50px; font-size: 15pt; color: #2e6c8e; background-color: #a6cde2; border: 3px solid #2e6c8e;">+</button>
-                                <span>1</span>
-                                <button style="border-radius: 50%; width: 50px; height: 50px; font-size: 15pt; color: #2e6c8e; background-color: #a6cde2; border: 3px solid #2e6c8e;">-</button>
+                                <button type="button" onclick="plus2()" style="border-radius: 50%; width: 50px; height: 50px; font-size: 15pt; color: #2e6c8e; background-color: #a6cde2; border: 3px solid #2e6c8e;">+</button>
+                                <span id="number2">0</span>
+                                <button type="button" onclick="mins2()" style="border-radius: 50%; width: 50px; height: 50px; font-size: 15pt; color: #2e6c8e; background-color: #a6cde2; border: 3px solid #2e6c8e;">-</button>
                             </div>
                         </div>
                     </div>
-                    <h4>Choisissez votre place</h4>
+                    <h4>Choose your seat</h4>
                     <div style="display: grid; justify-content: center; grid-template-columns: auto auto auto auto; gap: 20px;">
-                        <button style="border-radius: 5px; width: 50px; height: 50px; font-size: 15pt; color: #2e6c8e; background-color: #a6cde2; border: 3px solid #2e6c8e;">-</button>
-                        <button style="border-radius: 5px; width: 50px; height: 50px; font-size: 15pt; color: #2e6c8e; background-color: #a6cde2; border: 3px solid #2e6c8e;">-</button>
-                        <button style="border-radius: 5px; width: 50px; height: 50px; font-size: 15pt; color: #2e6c8e; background-color: #a6cde2; border: 3px solid #2e6c8e;">-</button>
-                        <button style="border-radius: 5px; width: 50px; height: 50px; font-size: 15pt; color: #2e6c8e; background-color: #a6cde2; border: 3px solid #2e6c8e;">-</button>
-                        <button style="border-radius: 5px; width: 50px; height: 50px; font-size: 15pt; color: #2e6c8e; background-color: #a6cde2; border: 3px solid #2e6c8e;">-</button>
-                        <button style="border-radius: 5px; width: 50px; height: 50px; font-size: 15pt; color: #2e6c8e; background-color: #a6cde2; border: 3px solid #2e6c8e;">-</button>
-                        <button style="border-radius: 5px; width: 50px; height: 50px; font-size: 15pt; color: #2e6c8e; background-color: #a6cde2; border: 3px solid #2e6c8e;">-</button>
-                        <button style="border-radius: 5px; width: 50px; height: 50px; font-size: 15pt; color: #2e6c8e; background-color: #a6cde2; border: 3px solid #2e6c8e;">-</button>
+                        <button onclick="changeS(1)" id="b1" type="button" style="border-radius: 5px; width: 50px; height: 50px; font-size: 15pt; color: #2e6c8e; background-color: #a6cde2; border: 3px solid #2e6c8e;">-</button>
+                        <button onclick="changeS(2)" id="b2" type="button" style="border-radius: 5px; width: 50px; height: 50px; font-size: 15pt; color: #2e6c8e; background-color: #a6cde2; border: 3px solid #2e6c8e;">-</button>
+                        <button onclick="changeS(3)" id="b3" type="button" style="border-radius: 5px; width: 50px; height: 50px; font-size: 15pt; color: #2e6c8e; background-color: #a6cde2; border: 3px solid #2e6c8e;">-</button>
+                        <button onclick="changeS(4)" id="b4" type="button" style="border-radius: 5px; width: 50px; height: 50px; font-size: 15pt; color: #2e6c8e; background-color: #a6cde2; border: 3px solid #2e6c8e;">-</button>
+                        <button onclick="changeS(5)" id="b5" type="button" style="border-radius: 5px; width: 50px; height: 50px; font-size: 15pt; color: #2e6c8e; background-color: #a6cde2; border: 3px solid #2e6c8e;">-</button>
+                        <button onclick="changeS(6)" id="b6" type="button" style="border-radius: 5px; width: 50px; height: 50px; font-size: 15pt; color: #2e6c8e; background-color: #a6cde2; border: 3px solid #2e6c8e;">-</button>
+                        <button onclick="changeS(7)" id="b7" type="button" style="border-radius: 5px; width: 50px; height: 50px; font-size: 15pt; color: #2e6c8e; background-color: #a6cde2; border: 3px solid #2e6c8e;">-</button>
+                        <button onclick="changeS(8)" id="b8" type="button" style="border-radius: 5px; width: 50px; height: 50px; font-size: 15pt; color: #2e6c8e; background-color: #a6cde2; border: 3px solid #2e6c8e;">-</button>
                     </div>
-                    <h4>Prix Total : 0000DH</h4>
+                    <h4 >Total Price: : <h4 id="Total">0000</h4>DH</h4>
 
                 </div>
 
                 <div class="formbold-form-step">
-                    <h1>Les tickets</h1>
+                    <h1>Tickets</h1>
               
                     <div style="height: 500px;display: flex; justify-content: center; align-items: center;">
-                    <div class="card content">
-                      <div class="user-info">
-                        <p>Nom et prénom : <span>AZIZ</span></p>
-                        <p>E-mail : <span>test.aziz@gmail.com</span></p>
-                        <p>Date de réservation : <span>12/15/48</span></p>
-                        <p>Prix : <span>00000DH</span></p>
-                      </div>
-                      <div class="qr-code">
-                        <p>Code QR :</p>
-                        <img src="qr-code.svg" alt="code QR"/>
-                      </div>
+                    <div id="card" class="card content">
+
                     </div>
                     </div>
                 </div>
 
                 <div class="formbold-form-btn-wrapper">
-                    <button type="button" class="formbold-back-btn">Back</button>
-                    <button type="button" class="formbold-next-btn">Next Step</button>
+                    <button onclick="delet()" type="button" class="formbold-back-btn">Back</button>
+                    <button onclick="ticket()" type="button" class="formbold-next-btn">Next Step</button>
                 </div>
             </form>
         </div>

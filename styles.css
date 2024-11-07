@@ -8,6 +8,9 @@
 
 body {
     font-family: "Inter", sans-serif;
+    background-color: #f4f7fc;
+    color: #333;
+    line-height: 1.6;
 }
 
 .formbold-main-wrapper {
@@ -15,6 +18,7 @@ body {
     align-items: center;
     justify-content: center;
     padding: 48px;
+    background-color: #f4f7fc;
 }
 
 .formbold-form-wrapper {
@@ -23,14 +27,15 @@ body {
     width: 100%;
     background: white;
     border: 1px solid #DDE3EC;
-    border-radius: 8px;
-    padding: 20px;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .formbold-steps {
     padding-bottom: 18px;
     margin-bottom: 35px;
-    border-bottom: 1px solid #DDE3EC;
+    border-bottom: 2px solid #DDE3EC;
 }
 
 .formbold-steps ul {
@@ -38,13 +43,13 @@ body {
     margin: 0;
     list-style: none;
     display: flex;
-    gap: 20px;
+    gap: 30px;
 }
 
 .formbold-steps li {
     display: flex;
     align-items: center;
-    gap: 14px;
+    gap: 12px;
     font-weight: 500;
     font-size: 16px;
     line-height: 24px;
@@ -91,14 +96,95 @@ body {
 
 .formbold-back-btn, .formbold-next-btn {
     cursor: pointer;
-    padding: 10px 20px;
+    padding: 12px 24px;
     background-color: #6A64F1;
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
 }
 
 .formbold-back-btn {
     background-color: #DDE3EC;
     color: #07074D;
 }
+
+.formbold-back-btn:hover, .formbold-next-btn:hover {
+    background-color: #5e54c1;
+}
+
+#card {
+    display: flex;
+    flex-wrap: wrap;
+    overflow-y: auto;
+    max-height: 80vh;
+    gap: 1.5rem;
+    padding: 1rem;
+    box-sizing: border-box;
+    justify-content: space-between;
+}
+
+.ticket {
+    width: 280px;
+    min-height: 180px;
+    padding: 20px;
+    margin: 15px;
+    background-color: #fff;
+    border: 2px dashed #2e6c8e;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: flex-start;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.ticket:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.ticket p {
+    margin: 10px 0;
+    font-size: 14pt;
+    color: #333;
+}
+
+.ticket p span {
+    font-weight: bold;
+    color: #2e6c8e;
+}
+
+.ticket #prix {
+    color: #008000;
+    font-size: 16pt;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    #card {
+        justify-content: center;
+    }
+    
+    .ticket {
+        width: 90%;
+    }
+
+    .formbold-form-wrapper {
+        padding: 20px;
+    }
+
+    .formbold-form-btn-wrapper {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .formbold-back-btn, .formbold-next-btn {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+

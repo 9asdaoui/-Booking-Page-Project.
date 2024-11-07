@@ -25,7 +25,11 @@
 
                 <div class="formbold-form-step">
                     <h1>Start the Reservation</h1>
-              <p>To begin your booking, select your departure station and the desired travel date. Once you’ve made your selections, you’ll be able to search for available trips and view the best options based on your preferences. Fill in your traveler details to proceed, and you’ll receive your tickets upon confirmation.</p>
+              <p>To begin your booking, select your departure station and the desired travel date. 
+                Once youve made your selections, 
+                youll be able to search for available trips and view the best options based on your preferences. 
+                Fill in your traveler details to proceed, 
+                and youll receive your Tickets upon confirmation.</p>
                 </div>
 
                 <div class="formbold-form-step">
@@ -49,7 +53,7 @@
                       <option value="casablanca">Sale</option>
                     </select>
                     
-                    <input id="date" type="date" style="margin-top: 30px; padding: 15px; width: 310px; border-radius: 8px; border: 2px solid #70afd0; color: #2e6c8e; font-weight: 700; font-size: 13pt;"/>
+                    <input id="date" type="date" style="margin-top: 30px; padding: 15px; width: 27%; border-radius: 8px; border: 2px solid #70afd0; color: #2e6c8e; font-weight: 700; font-size: 13pt;"/>
                     
                 </div>
 
@@ -61,24 +65,23 @@
                           <span>6:30</span>
                           <img width="50px" src="./airplane.png" alt="">
                           <span>8:45</span>
+                          <input type="checkbox" >
                       </div>
                       <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px; padding: 15px 20px; text-align: center; border-radius: 8px; box-shadow: 0px 2px 40px -15px #70afd0; border: 1px solid #70afd0; color: #2e6c8e; font-weight: 700; font-size: 13pt;">
                           <img height="50px" src="https://beebom.com/wp-content/uploads/2018/12/Lufthansa-Logo.jpg" alt="">
                           <span>6:30</span>
                           <img width="50px" src="./airplane.png" alt="">
                           <span>8:45</span>
+                          <input type="checkbox" >
+
                       </div>
                       <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px; padding: 15px 20px; text-align: center; border-radius: 8px; box-shadow: 0px 2px 40px -15px #70afd0; border: 1px solid #70afd0; color: #2e6c8e; font-weight: 700; font-size: 13pt;">
                           <img height="50px" src="https://beebom.com/wp-content/uploads/2018/12/Lufthansa-Logo.jpg" alt="">
                           <span>6:30</span>
                           <img width="50px" src="./airplane.png" alt="">
                           <span>8:45</span>
-                      </div>
-                      <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px; padding: 15px 20px; text-align: center; border-radius: 8px; box-shadow: 0px 2px 40px -15px #70afd0; border: 1px solid #70afd0; color: #2e6c8e; font-weight: 700; font-size: 13pt;">
-                          <img height="50px" src="https://beebom.com/wp-content/uploads/2018/12/Lufthansa-Logo.jpg" alt="">
-                          <span>6:30</span>
-                          <img width="50px" src="./airplane.png" alt="">
-                          <span>8:45</span>
+                          <input type="checkbox" >
+
                       </div>
                     </div>
                 </div>
@@ -89,31 +92,32 @@
                         <div>
                             <h4>Adult (Prix 500DH)</h4>
                             <div style="display: flex; align-items: center; gap: 10px;">
-                                <button type="button" onclick="plus1()" style="border-radius: 50%; width: 50px; height: 50px; font-size: 15pt; color: #2e6c8e; background-color: #a6cde2; border: 3px solid #2e6c8e;">+</button>
+                                <button type="button" onclick="Plus1()" style="border-radius: 50%; width: 50px; height: 50px; font-size: 15pt; color: #2e6c8e; background-color: #a6cde2; border: 3px solid #2e6c8e;">+</button>
                                 <span id="number1">0</span>
-                                <button type="button" onclick="mins1()" style="border-radius: 50%; width: 50px; height: 50px; font-size: 15pt; color: #2e6c8e; background-color: #a6cde2; border: 3px solid #2e6c8e;">-</button>
+                                <button type="button" onclick="Mins1()" style="border-radius: 50%; width: 50px; height: 50px; font-size: 15pt; color: #2e6c8e; background-color: #a6cde2; border: 3px solid #2e6c8e;">-</button>
                             </div>
                         </div>
                         <div style="width: 5px; background-color: #2e6c8e;"></div>
                         <div>
                             <h4>Child (Price 100DH)</h4>
                             <div style="display: flex; align-items: center; gap: 10px;">
-                                <button type="button" onclick="plus2()" style="border-radius: 50%; width: 50px; height: 50px; font-size: 15pt; color: #2e6c8e; background-color: #a6cde2; border: 3px solid #2e6c8e;">+</button>
+                                <button type="button" onclick="Plus2()" style="border-radius: 50%; width: 50px; height: 50px; font-size: 15pt; color: #2e6c8e; background-color: #a6cde2; border: 3px solid #2e6c8e;">+</button>
                                 <span id="number2">0</span>
-                                <button type="button" onclick="mins2()" style="border-radius: 50%; width: 50px; height: 50px; font-size: 15pt; color: #2e6c8e; background-color: #a6cde2; border: 3px solid #2e6c8e;">-</button>
+                                <button type="button" onclick="Mins2()" style="border-radius: 50%; width: 50px; height: 50px; font-size: 15pt; color: #2e6c8e; background-color: #a6cde2; border: 3px solid #2e6c8e;">-</button>
                             </div>
                         </div>
                     </div>
                     <h4>Choose your seat</h4>
                     <div style="display: grid; justify-content: center; grid-template-columns: auto auto auto auto; gap: 20px;">
-                        <button onclick="changeS(1)" id="b1" type="button" style="border-radius: 5px; width: 50px; height: 50px; font-size: 15pt; color: #2e6c8e; background-color: #a6cde2; border: 3px solid #2e6c8e;">-</button>
-                        <button onclick="changeS(2)" id="b2" type="button" style="border-radius: 5px; width: 50px; height: 50px; font-size: 15pt; color: #2e6c8e; background-color: #a6cde2; border: 3px solid #2e6c8e;">-</button>
-                        <button onclick="changeS(3)" id="b3" type="button" style="border-radius: 5px; width: 50px; height: 50px; font-size: 15pt; color: #2e6c8e; background-color: #a6cde2; border: 3px solid #2e6c8e;">-</button>
-                        <button onclick="changeS(4)" id="b4" type="button" style="border-radius: 5px; width: 50px; height: 50px; font-size: 15pt; color: #2e6c8e; background-color: #a6cde2; border: 3px solid #2e6c8e;">-</button>
-                        <button onclick="changeS(5)" id="b5" type="button" style="border-radius: 5px; width: 50px; height: 50px; font-size: 15pt; color: #2e6c8e; background-color: #a6cde2; border: 3px solid #2e6c8e;">-</button>
-                        <button onclick="changeS(6)" id="b6" type="button" style="border-radius: 5px; width: 50px; height: 50px; font-size: 15pt; color: #2e6c8e; background-color: #a6cde2; border: 3px solid #2e6c8e;">-</button>
-                        <button onclick="changeS(7)" id="b7" type="button" style="border-radius: 5px; width: 50px; height: 50px; font-size: 15pt; color: #2e6c8e; background-color: #a6cde2; border: 3px solid #2e6c8e;">-</button>
-                        <button onclick="changeS(8)" id="b8" type="button" style="border-radius: 5px; width: 50px; height: 50px; font-size: 15pt; color: #2e6c8e; background-color: #a6cde2; border: 3px solid #2e6c8e;">-</button>
+                        <button onclick="ChangeS(1)" id="b1" type="button" style="border-radius: 5px; width: 50px; height: 50px; font-size: 15pt; color: #2e6c8e; background-color: #a6cde2; border: 3px solid #2e6c8e;">-</button>
+                        <button onclick="ChangeS(2)" id="b2" type="button" style="border-radius: 5px; width: 50px; height: 50px; font-size: 15pt; color: #2e6c8e; background-color: #a6cde2; border: 3px solid #2e6c8e;">-</button>
+                        <button onclick="ChangeS(3)" id="b3" type="button" style="border-radius: 5px; width: 50px; height: 50px; font-size: 15pt; color: #2e6c8e; background-color: #a6cde2; border: 3px solid #2e6c8e;">-</button>
+                        <button onclick="ChangeS(4)" id="b4" type="button" style="border-radius: 5px; width: 50px; height: 50px; font-size: 15pt; color: #2e6c8e; background-color: #a6cde2; border: 3px solid #2e6c8e;">-</button>
+                        <button onclick="ChangeS(5)" id="b5" type="button" style="border-radius: 5px; width: 50px; height: 50px; font-size: 15pt; color: #2e6c8e; background-color: #a6cde2; border: 3px solid #2e6c8e;">-</button>
+                        <button onclick="ChangeS(6)" id="b6" type="button" style="border-radius: 5px; width: 50px; height: 50px; font-size: 15pt; color: #2e6c8e; background-color: #a6cde2; border: 3px solid #2e6c8e;">-</button>
+                        <button onclick="ChangeS(7)" id="b7" type="button" style="border-radius: 5px; width: 50px; height: 50px; font-size: 15pt; color: #2e6c8e; background-color: #a6cde2; border: 3px solid #2e6c8e;">-</button>
+                        <button onclick="ChangeS(8)" id="b8" type="button" style="border-radius: 5px; width: 50px; height: 50px; font-size: 15pt; color: #2e6c8e; background-color: #a6cde2; border: 3px solid #2e6c8e;">-</button>
+                        
                     </div>
                     <h4 >Total Price: : <h4 id="Total">0000</h4>DH</h4>
 
@@ -122,7 +126,7 @@
                 <div class="formbold-form-step">
                     <h1>Tickets</h1>
               
-                    <div style="height: 500px;display: flex; justify-content: center; align-items: center;">
+                    <div style="height: 600px;display: flex; justify-content: center; align-items: center;">
                     <div id="card" class="card content">
 
                     </div>
@@ -130,8 +134,8 @@
                 </div>
 
                 <div class="formbold-form-btn-wrapper">
-                    <button onclick="delet()" type="button" class="formbold-back-btn">Back</button>
-                    <button onclick="ticket()" type="button" class="formbold-next-btn">Next Step</button>
+                    <button onclick="Delet()" type="button" class="formbold-back-btn">Back</button>
+                    <button onclick="Ticket()" type="button" class="formbold-next-btn">Next Step</button>
                 </div>
             </form>
         </div>

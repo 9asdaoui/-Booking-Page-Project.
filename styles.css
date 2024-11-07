@@ -6,19 +6,26 @@
     box-sizing: border-box;
 }
 
+
 body {
     font-family: "Inter", sans-serif;
-    background-color: #f4f7fc;
+    background-image: url("zf.jpg");
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-attachment: fixed; 
     color: #333;
     line-height: 1.6;
+    position: relative;
 }
+
 
 .formbold-main-wrapper {
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 48px;
-    background-color: #f4f7fc;
+   
 }
 
 .formbold-form-wrapper {
@@ -43,8 +50,7 @@ body {
     margin: 0;
     list-style: none;
     display: flex;
-    gap: 30px;
-}
+    justify-content: space-between;}
 
 .formbold-steps li {
     display: flex;
@@ -122,10 +128,10 @@ body {
     gap: 1.5rem;
     padding: 1rem;
     box-sizing: border-box;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
-.ticket {
+.Ticket {
     width: 280px;
     min-height: 180px;
     padding: 20px;
@@ -142,23 +148,23 @@ body {
     transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 
-.ticket:hover {
+.Ticket:hover {
     transform: scale(1.05);
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
 }
 
-.ticket p {
+.Ticket p {
     margin: 10px 0;
     font-size: 14pt;
     color: #333;
 }
 
-.ticket p span {
+.Ticket p span {
     font-weight: bold;
     color: #2e6c8e;
 }
 
-.ticket #prix {
+.Ticket #prix {
     color: #008000;
     font-size: 16pt;
     font-weight: bold;
@@ -169,7 +175,7 @@ body {
         justify-content: center;
     }
     
-    .ticket {
+    .Ticket {
         width: 90%;
     }
 

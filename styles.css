@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 * {
     margin: 0;
@@ -19,7 +18,72 @@ body {
     position: relative;
 }
 
+.formbold-form-step { 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
+.station-selection {
+    display: flex;
+    align-items: center;
+    gap: 10px; 
+    margin-top: 30px;
+}
+
+.station-select {
+    padding: 15px;
+    width:40%;
+    border-radius: 8px;
+    border: 2px solid #70afd0;
+    color: #2e6c8e;
+    font-weight: 700;
+    font-size: 13pt;
+    appearance: none;
+}
+.input-label {
+    font-family: Arial, sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    color: #1d475d;
+    margin-bottom: 5px;
+}
+.arrow-icon {
+    width: 40px; 
+    height: 40px;
+    margin: 0 10px;
+    transition: transform 0.3s ease; 
+}
+
+.arrow-icon:hover {
+    transform: scale(1.1); 
+}
+#arrow-btn{
+    background-color: white;
+    border: none;
+}
+.date-input {
+    margin-top: 30px;
+    padding: 15px;
+    width: 93%;
+    border-radius: 8px;
+    border: 2px solid #70afd0;
+    color: #2e6c8e;
+    font-weight: 700;
+    font-size: 13pt;
+} 
+input[type="date"]::-webkit-calendar-picker-indicator {
+    width: 20px;
+    height: 20px;
+    background-image: url(calendar\ \(3\).png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+input[type="date"]:hover::-webkit-calendar-picker-indicator {
+    transform: scale(1.4);
+}
 .formbold-main-wrapper {
     display: flex;
     align-items: center;
@@ -118,6 +182,20 @@ body {
 
 .formbold-back-btn:hover, .formbold-next-btn:hover {
     background-color: #5e54c1;
+}
+.next-btn {
+    cursor: pointer;
+    padding: 12px 24px;
+    background-color: #6A64F1; /* Initial background color */
+    color: white; /* Text color */
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.next-btn:hover {
+    background-color: #5e54c1; /* Hover background color */
 }
 
 #card {

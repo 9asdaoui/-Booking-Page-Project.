@@ -8,7 +8,7 @@ let currentStep = 0;
 stepMenus[currentStep].classList.add('active');
 formSteps[currentStep].classList.add('active');
 
-nextBtn.addEventListener('click', function() {
+function next() {
     if (currentStep < stepMenus.length - 1) {
         stepMenus[currentStep].classList.remove('active');
         formSteps[currentStep].classList.remove('active');
@@ -19,9 +19,9 @@ nextBtn.addEventListener('click', function() {
         formSteps[currentStep].classList.add('active');
     }
     updateButtons();
-});
+};
 
-backBtn.addEventListener('click', function() {
+function back() {
     if (currentStep > 0) {
         stepMenus[currentStep].classList.remove('active');
         formSteps[currentStep].classList.remove('active');
@@ -32,20 +32,7 @@ backBtn.addEventListener('click', function() {
         formSteps[currentStep].classList.add('active');
     }
     updateButtons();
-});
-
-function updateButtons() {
-    if (currentStep === 0) {
-    } else {
-        backBtn.disabled = false;
-    }
-    
-    if (currentStep === stepMenus.length - 1) {
-        nextBtn.disabled = true; 
-    } else {
-        nextBtn.disabled = false; 
-    }
-}
+};
 
 function updateButtons() {
    
@@ -57,6 +44,12 @@ function updateButtons() {
 
  
     if (currentStep === stepMenus.length - 1) {
+        nextBtn.style.display = 'none';
+    } else {
+        nextBtn.style.display = 'block';
+    }
+
+    if (currentStep === 2) {
         nextBtn.style.display = 'none';
     } else {
         nextBtn.style.display = 'block';
@@ -126,7 +119,7 @@ function ChangeS(id) {
      
     if (button.getAttribute("active") == "true") {
        
-        button.setAttribute("style", "border-radius: 5px; width: 50px; height: 50px; font-size: 15pt; color: #2e6c8e; background-color: #a6cde2; border: 3px solid #2e6c8e;");
+        button.setAttribute("style", "border-radius: 8px; width: 50px; height: 50px; font-size: 15pt; color: #ffffff; background-color: #2e6c8e; border: 2px solid #2e6c8e;");
         button.setAttribute("active", "false"); 
         countes--;
     } else {
@@ -284,4 +277,10 @@ function Delet() {
     for (let i = 0; i < Tickets.length; i++) {
         Tickets[i].innerHTML = ''; 
     }
+}
+
+function switsh(){
+    let temp = document.getElementById("depar").value;
+    document.getElementById("depar").value=  document.getElementById("arrive").value;
+    document.getElementById("arrive").value= temp;
 }

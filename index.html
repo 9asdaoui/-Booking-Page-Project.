@@ -61,7 +61,7 @@
                         </select>
                     </div>
                 
-                    <label for="date" class="input-label">Date</label>
+                    <label for="date" id="" class="input-label">Date</label>
                     <input id="date" type="date" class="date-input" value="2024-10-30" >
 
                 </div>
@@ -99,42 +99,59 @@
 
                 <div class="formbold-form-step">
                     
-                    <h1 style="text-align: center; font-size: 28px; color: #2e6c8e; font-weight: 700; margin-bottom: 15px;">Travelers</h1>
-                    <div style="display: flex; justify-content: space-between; padding: 20px; border: 2px solid #2e6c8e; border-radius: 8px; background-color: #f4f9fc;">
+                    <h1 style="text-align: center; font-size: 28px; color: #6cb1d9; font-weight: 700; margin-bottom: 15px;">Travelers</h1>
+                    <div style="display: flex; justify-content: space-between; padding: 20px; border: 2px solid #6cb1d9; border-radius: 8px; background-color: #e6f7fc;">
                         <div style="flex: 1; text-align: center;">
-                            <h4 style="color: #2e6c8e; font-size: 18px; font-weight: 600;">Adult (Price: 500DH)</h4>
+                            <h4 style="color: #6cb1d9; font-size: 18px; font-weight: 600;">Adult (Price: 500DH)</h4>
                             <div style="display: flex; align-items: center; justify-content: center; gap: 10px;">
-                                <button type="button" onclick="Plus1()" style="border-radius: 50%; width: 50px; height: 50px; font-size: 16pt; color: #ffffff; background-color: #2e6c8e; border: 3px solid #2e6c8e;">+</button>
-                                <span id="number1" style="font-size: 18px; font-weight: 600; color: #2e6c8e;">0</span>
-                                <button type="button" onclick="Mins1()" style="border-radius: 50%; width: 50px; height: 50px; font-size: 16pt; color: #ffffff; background-color: #2e6c8e; border: 3px solid #2e6c8e;">-</button>
+                                <button type="button" onclick="Plus1()" style="border-radius: 50%; width: 50px; height: 50px; font-size: 16pt; color: #ffffff; background-color: #6cb1d9; border: 3px solid #6cb1d9; transition: background-color 0.3s ease;">+</button>
+                                <span id="number1" style="font-size: 18px; font-weight: 600; color: #6cb1d9;">0</span>
+                                <button type="button" onclick="Mins1()" style="border-radius: 50%; width: 50px; height: 50px; font-size: 16pt; color: #ffffff; background-color: #6cb1d9; border: 3px solid #6cb1d9; transition: background-color 0.3s ease;">-</button>
                             </div>
                         </div>
                     
-                        <div style="width: 2px; background-color: #2e6c8e; margin: 0 20px;"></div>
+                        <div style="width: 2px; background-color: #6cb1d9; margin: 0 20px;"></div>
                     
                         <div style="flex: 1; text-align: center;">
-                            <h4 style="color: #2e6c8e; font-size: 18px; font-weight: 600;">Child (Price: 100DH)</h4>
+                            <h4 style="color: #6cb1d9; font-size: 18px; font-weight: 600;">Child (Price: 100DH)</h4>
                             <div style="display: flex; align-items: center; justify-content: center; gap: 10px;">
-                                <button type="button" onclick="Plus2()" style="border-radius: 50%; width: 50px; height: 50px; font-size: 16pt; color: #ffffff; background-color: #2e6c8e; border: 3px solid #2e6c8e;">+</button>
-                                <span id="number2" style="font-size: 18px; font-weight: 600; color: #2e6c8e;">0</span>
-                                <button type="button" onclick="Mins2()" style="border-radius: 50%; width: 50px; height: 50px; font-size: 16pt; color: #ffffff; background-color: #2e6c8e; border: 3px solid #2e6c8e;">-</button>
+                                <button type="button" onclick="Plus2()" style="border-radius: 50%; width: 50px; height: 50px; font-size: 16pt; color: #ffffff; background-color: #6cb1d9; border: 3px solid #6cb1d9; transition: background-color 0.3s ease;">+</button>
+                                <span id="number2" style="font-size: 18px; font-weight: 600; color: #6cb1d9;">0</span>
+                                <button type="button" onclick="Mins2()" style="border-radius: 50%; width: 50px; height: 50px; font-size: 16pt; color: #ffffff; background-color: #6cb1d9; border: 3px solid #6cb1d9; transition: background-color 0.3s ease;">-</button>
                             </div>
                         </div>
                     </div>
                     
-                    <h4 style="text-align: center; color: #2e6c8e; font-size: 18px; font-weight: 600; margin-top: 20px;">Choose your seat</h4>
-                    <div style="display: grid; justify-content: center; grid-template-columns: repeat(4, 60px); gap: 15px; padding: 20px; background-color: #f4f9fc; border-radius: 8px; border: 2px solid #2e6c8e;">
-                        <button onclick="ChangeS(1)" id="b1" type="button" style="border-radius: 8px; width: 50px; height: 50px; font-size: 15pt; color: #ffffff; background-color: #2e6c8e; border: 2px solid #2e6c8e;">-</button>
-                        <button onclick="ChangeS(2)" id="b2" type="button" style="border-radius: 8px; width: 50px; height: 50px; font-size: 15pt; color: #ffffff; background-color: #2e6c8e; border: 2px solid #2e6c8e;">-</button>
-                        <button onclick="ChangeS(3)" id="b3" type="button" style="border-radius: 8px; width: 50px; height: 50px; font-size: 15pt; color: #ffffff; background-color: #2e6c8e; border: 2px solid #2e6c8e;">-</button>
-                        <button onclick="ChangeS(4)" id="b4" type="button" style="border-radius: 8px; width: 50px; height: 50px; font-size: 15pt; color: #ffffff; background-color: #2e6c8e; border: 2px solid #2e6c8e;">-</button>
-                        <button onclick="ChangeS(5)" id="b5" type="button" style="border-radius: 8px; width: 50px; height: 50px; font-size: 15pt; color: #ffffff; background-color: #2e6c8e; border: 2px solid #2e6c8e;">-</button>
-                        <button onclick="ChangeS(6)" id="b6" type="button" style="border-radius: 8px; width: 50px; height: 50px; font-size: 15pt; color: #ffffff; background-color: #2e6c8e; border: 2px solid #2e6c8e;">-</button>
-                        <button onclick="ChangeS(7)" id="b7" type="button" style="border-radius: 8px; width: 50px; height: 50px; font-size: 15pt; color: #ffffff; background-color: #2e6c8e; border: 2px solid #2e6c8e;">-</button>
-                        <button onclick="ChangeS(8)" id="b8" type="button" style="border-radius: 8px; width: 50px; height: 50px; font-size: 15pt; color: #ffffff; background-color: #2e6c8e; border: 2px solid #2e6c8e;">-</button>
-                    </div>
+                    <h4 style="text-align: center; color: #6cb1d9; font-size: 18px; font-weight: 600; margin-top: 20px;">Choose your seat</h4>
+ 
+                    <div style=" background-color: #f2f4f9; border-radius: 8px; box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);">
+                        <div id="activebtn" style="background: url('plane-seat-background.jpg'); background-size: cover; padding: 71px; border-radius: 8px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);">
+                            <div style="display: grid; justify-content: center; grid-template-columns: repeat(8, 60px); gap: 15px; padding: 20px;">
+                                <button onclick="ChangeS(1)" id="b1" type="button" class="seat available">A1</button>
+                                <button onclick="ChangeS(2)" id="b2" type="button" class="seat available">A2</button>
+                                <button onclick="ChangeS(3)" id="b3" type="button" class="seat available">A3</button>
+                                <button onclick="ChangeS(4)" id="b4" type="button" class="seat available">A4</button>
+                                <button onclick="ChangeS(5)" id="b5" type="button" class="seat available">A5</button>
+                                <button onclick="ChangeS(6)" id="b6" type="button" class="seat available">A6</button>
+                                <button onclick="ChangeS(7)" id="b7" type="button" class="seat available">A7</button>
+                                <button onclick="ChangeS(8)" id="b8" type="button" class="seat available">A8</button>
+                            </div>
                     
-                    <h4 style="text-align: center; color: #2e6c8e; font-size: 18px; font-weight: 600; margin-top: 20px;">Total Price: <span id="Total" style="font-size: 18px; font-weight: bold;">0000</span> DH</h4>
+                            <div style="display: grid; justify-content: center; grid-template-columns: repeat(8, 60px); gap: 15px; padding: 20px;">
+                                <button onclick="ChangeS(9)" id="b9" type="button" class="seat available">B9</button>
+                                <button onclick="ChangeS(10)" id="b10" type="button" class="seat available">B10</button>
+                                <button onclick="ChangeS(11)" id="b11" type="button" class="seat available">B11</button>
+                                <button onclick="ChangeS(12)" id="b12" type="button" class="seat available">B12</button>
+                                <button onclick="ChangeS(13)" id="b13" type="button" class="seat available">B13</button>
+                                <button onclick="ChangeS(14)" id="b14" type="button" class="seat available">B14</button>
+                                <button onclick="ChangeS(15)" id="b15" type="button" class="seat available">B15</button>
+                                <button onclick="ChangeS(16)" id="b16" type="button" class="seat available">B16</button>
+                            </div>
+                    
+                            
+                        </div>
+                    </div>
+                    <h4 style="text-align: center; color: #6cb1d9; font-size: 18px; font-weight: 600; margin-top: 20px;">Total Price: <span id="Total" style="font-size: 18px; font-weight: bold;">0000</span> DH</h4>
                     
                 
                 </div>

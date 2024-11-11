@@ -33,6 +33,7 @@ function back() {
     }
     updateButtons();
 };
+updateButtons();
 
 function updateButtons() {
    
@@ -116,49 +117,42 @@ function ChangeS(id) {
     
     let button = document.getElementById("b" + id);
 
-     
     if (button.getAttribute("active") == "true") {
-       
-        button.setAttribute("style", "border-radius: 8px; width: 50px; height: 50px; font-size: 15pt; color: #ffffff; background-color: #2e6c8e; border: 2px solid #2e6c8e;");
-        button.setAttribute("active", "false"); 
+        button.setAttribute("style", "border-radius: 8px; width: 60px; height: 40px; font-size: 15pt; color: #ffffff; background-color: #6cb1d9; border: 2px solid #6cb1d9; transition: background-color 0.3s ease;");
+        button.setAttribute("active", "false");
         countes--;
     } else {
-       if(countes < adultnum+kidsnum){
-        button.setAttribute("style", "border-radius: 5px; width: 50px; height: 50px; font-size: 15pt; color: #2e6c8e; background-color: #008000; border: 3px solid #2e6c8e;");
-        button.setAttribute("active", "true");
-        countes++;
-    } else {
-        alert("You can't choose more seats.");
+        if (countes < adultnum + kidsnum) {
+            button.setAttribute("style", "border-radius: 8px; width: 60px; height: 40px; font-size: 15pt; color: #ffffff; background-color: #008000; border: 3px solid #2e6c8e; transition: background-color 0.3s ease;");
+            button.setAttribute("active", "true");
+            countes++;
+        } else {
+            alert("You can't choose more seats.");
+        }
     }
 }
-}
 
 
-// let counter = 1;
-// function ChangeS(id) { 
-    
-//     let button = document.getElementById("b"+id);
-    
-//     if (counter === 1) {
-//         button.setAttribute("style", "border-radius: 5px; width: 50px; height: 50px; font-size: 15pt; color: #2e6c8e; background-color: #008000; border: 3px solid #2e6c8e;");
-//         counter = 2;
-//     } else if (counter === 2) {
-//         button.setAttribute("style", "border-radius: 5px; width: 50px; height: 50px; font-size: 15pt; color: #2e6c8e; background-color: #a6cde2; border: 3px solid #2e6c8e;");
-//         counter = 1; 
-//     }
-// }
+
+
+
 
 function Ticket() {
       let prix = parseInt(document.getElementById("Total").textContent);
       if(prix != 0){
+
         let adultnum = parseInt(document.getElementById("number1").textContent);
         let kidsnum = parseInt(document.getElementById("number2").textContent);
+        let Depar = document.getElementById("depar").value;
+        let Arriv = document.getElementById("arrive").value;
+        let Date = document.getElementById("date").value;  
+
+        let parentDiv = document.getElementById('activebtn'); 
+        let elements = parentDiv.querySelectorAll('[active="true"]');
         
+
         for (let i=0  ; i < adultnum ; i++){
-            let Depar = document.getElementById("depar").value;
-            let Arriv = document.getElementById("arrive").value;
-            let Date = document.getElementById("date").value;
-            
+
         
             let card = document.getElementById("card");
             let div = document.createElement("div");
@@ -188,7 +182,16 @@ function Ticket() {
             dspan.textContent = Date;
             date.appendChild(dspan);
             div.appendChild(date);
-        
+
+            let seat = document.createElement("p");
+            seat.innerHTML = "seat number : "
+            let seatspan = document.createElement("span");
+            seatspan.setAttribute("id", "seat");
+            seatspan.textContent = elements[i].textContent;
+            seat.appendChild(seatspan);
+            div.appendChild(seat);
+
+
             let Prix = document.createElement("p");
             Prix.innerHTML = "Prix : "
             let pspan = document.createElement("span");
@@ -211,10 +214,8 @@ function Ticket() {
             });
             
          }
-        for (let i=0  ; i < kidsnum ; i++){
-            let Depar = document.getElementById("depar").value;
-            let Arriv = document.getElementById("arrive").value;
-            let Date = document.getElementById("date").value;
+        for (let i=adultnum  ; i < kidsnum+adultnum; i++){
+
             
         
             let card = document.getElementById("card");
@@ -246,6 +247,14 @@ function Ticket() {
             dspan.textContent = Date;
             date.appendChild(dspan);
             div.appendChild(date);
+
+            let seat = document.createElement("p");
+            seat.innerHTML = "seat number : "
+            let seatspan = document.createElement("span");
+            seatspan.setAttribute("id", "seat");
+            seatspan.textContent = elements[i].textContent;
+            seat.appendChild(seatspan);
+            div.appendChild(seat);
         
             let Prix = document.createElement("p");
             Prix.innerHTML = "Prix : "
@@ -270,6 +279,7 @@ function Ticket() {
         }
         
 }
+
 }
 
 function Delet() {
@@ -284,3 +294,4 @@ function switsh(){
     document.getElementById("depar").value=  document.getElementById("arrive").value;
     document.getElementById("arrive").value= temp;
 }
+

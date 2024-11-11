@@ -272,3 +272,29 @@ input[type="date"]:hover::-webkit-calendar-picker-indicator {
     }
 }
 
+.seat {
+    border-radius: 8px;
+    width: 60px;
+    height: 40px;
+    font-size: 15pt;
+    color: #ffffff;
+    background-color: #6cb1d9;
+    border: 2px solid #6cb1d9;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.seat:hover {
+    background-color: #5a9bb6;
+    transform: scale(1.1);
+}
+
+.seat.selected {
+    background-color: #ffcc00;
+    border: 2px solid #ff9900;
+}
+
+.seat.booked {
+    background-color: #f1f1f1;
+    border: 2px solid #999999;
+}

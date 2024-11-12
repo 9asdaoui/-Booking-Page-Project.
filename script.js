@@ -39,8 +39,11 @@ function updateButtons() {
    
     if (currentStep === 0) {
         backBtn.style.display = 'none';
+
     } else {
-        backBtn.style.display = 'block';
+        backBtn.style.display = 'block';        
+
+
     }
 
  
@@ -123,7 +126,7 @@ function ChangeS(id) {
         countes--;
     } else {
         if (countes < adultnum + kidsnum) {
-            button.setAttribute("style", "border-radius: 8px; width: 60px; height: 40px; font-size: 15pt; color: #ffffff; background-color: #008000; border: 3px solid #2e6c8e; transition: background-color 0.3s ease;");
+            button.setAttribute("style", "border-radius: 8px; width: 60px; height: 40px; font-size: 15pt; color: #ffffff; background-color: #07b607; border: 3px solid #92cb92; transition: background-color 0.3s ease;");
             button.setAttribute("active", "true");
             countes++;
         } else {

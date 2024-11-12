@@ -69,26 +69,30 @@ function TotalRes(){
 }
 
 function Plus1(){
+
     let adultnum = parseInt(document.getElementById("number1").textContent);
     let kidsnum = parseInt(document.getElementById("number2").textContent);
+
     if (adultnum + kidsnum < 8){
-   let number1 = document.getElementById("number1");
-   let prix = document.getElementById("Total");
-   prix.textContent = parseInt(prix.textContent) + 500;
-   number1.textContent = parseInt(number1.textContent) + 1;
-  TotalRes()
+        let number1 = document.getElementById("number1");
+        let prix = document.getElementById("Total");
+        prix.textContent = parseInt(prix.textContent) + 500;
+        number1.textContent = parseInt(number1.textContent) + 1;
+        TotalRes()
     }
 }
 function Plus2(){
+
     let adultnum = parseInt(document.getElementById("number1").textContent);
     let kidsnum = parseInt(document.getElementById("number2").textContent);
-    if (adultnum + kidsnum < 8){
-    let number2 = document.getElementById("number2");
-    let prix = document.getElementById("Total");
-   prix.textContent = parseInt(prix.textContent) + 100;
-   number2.textContent = parseInt(number2.textContent) + 1;
 
-   TotalRes()
+    if (adultnum + kidsnum < 8){
+        let number2 = document.getElementById("number2");
+        let prix = document.getElementById("Total");
+        prix.textContent = parseInt(prix.textContent) + 100;
+        number2.textContent = parseInt(number2.textContent) + 1;
+
+        TotalRes()
     }
 }
 
@@ -97,20 +101,23 @@ function Mins1(){
 
    let number1 = document.getElementById("number1");
    let prix = document.getElementById("Total");
+
    if(parseInt(number1.textContent)!= 0){ 
     prix.textContent = parseInt(prix.textContent) - 500;
-   number1.textContent = parseInt(number1.textContent) - 1;}
+    number1.textContent = parseInt(number1.textContent) - 1;}
 
-   TotalRes()
+    TotalRes()
 }
 function Mins2(){
+
     let number2 = document.getElementById("number2");
     let prix = document.getElementById("Total");
-    if(parseInt(number2.textContent)!= 0){
-   prix.textContent = parseInt(prix.textContent) - 100;
-   number2.textContent = parseInt(number2.textContent) - 1;}
 
-   TotalRes()
+    if(parseInt(number2.textContent)!= 0){
+        prix.textContent = parseInt(prix.textContent) - 100;
+        number2.textContent = parseInt(number2.textContent) - 1;}
+
+       TotalRes()
 }
 
 let countes = 0;
@@ -220,7 +227,6 @@ function Ticket() {
         for (let i=adultnum  ; i < kidsnum+adultnum; i++){
 
             
-        
             let card = document.getElementById("card");
             card.setAttribute("class","Ticket-card")
             let div = document.createElement("div");

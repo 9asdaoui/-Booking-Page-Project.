@@ -186,8 +186,7 @@ input[type="date"]:hover::-webkit-calendar-picker-indicator {
 .next-btn {
     cursor: pointer;
     padding: 12px 24px;
-    background-color: #6A64F1; /* Initial background color */
-    color: white; /* Text color */
+    background-color: #6A64F1;
     border: none;
     border-radius: 6px;
     font-size: 16px;
@@ -195,7 +194,7 @@ input[type="date"]:hover::-webkit-calendar-picker-indicator {
 }
 
 .next-btn:hover {
-    background-color: #5e54c1; /* Hover background color */
+    background-color: #5e54c1;
 }
 
 #card {
@@ -303,11 +302,10 @@ header {
     align-items: center;
     justify-content: space-between;
     padding: 15px 30px;
-    background-color: #ffffff; /* White background */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    background-color: #ffffff; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
 }
 
-/* Logo Section */
 .header-logo {
     display: flex;
     align-items: center;
@@ -323,12 +321,11 @@ header {
 .logo-text {
     font-size: 26px;
     font-weight: 700;
-    color: #0056b3; /* Dark blue for contrast */
+    color: #0056b3; 
     text-transform: uppercase;
     letter-spacing: 1px;
 }
 
-/* Navigation Menu */
 .menu {
     list-style: none;
     display: flex;
@@ -336,7 +333,7 @@ header {
 }
 
 .menu li a {
-    color: #0056b3; /* Dark blue text color */
+    color: #0056b3; 
     font-size: 18px;
     text-decoration: none;
     padding: 8px 15px;
@@ -345,7 +342,7 @@ header {
 }
 
 .menu li a:hover {
-    background-color: #e0e0e0; /* Light gray hover background */
+    background-color: #e0e0e0; 
     color: #0056b3;
     transform: scale(1.05);
 }

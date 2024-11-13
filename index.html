@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script> 
     <script src="path/to/anime.min.js"></script>
@@ -56,7 +57,7 @@
                 
                     <div class="station-selection">
                         <label for="depar" class="input-label">From</label>
-                        <select id="depar" class="station-select">
+                        <select id="depar" class="station-select" required>
                             <option value="">Select the departure station</option>
                             <option value="marrakech">Marrakech</option>
                             <option value="casablanca">Casablanca</option>
@@ -70,7 +71,7 @@
                         </button>
                 
                         <label for="arrive" class="input-label">To</label>
-                        <select id="arrive" class="station-select">
+                        <select id="arrive" class="station-select" required>
                             <option value="">Select the arrival station</option>
                             <option value="marrakech">Marrakech</option>
                             <option value="casablanca">Casablanca</option>
@@ -81,36 +82,30 @@
                     </div>
                 
                     <label for="date" id="" class="input-label">Date</label>
-                    <input id="date" type="date" class="date-input" value="2024-10-30" >
+                    <input id="date" type="date" class="date-input" value="2024-11-30"  >
 
                 </div>
                 
                 
 
-                <div class="formbold-form-step">
+                <div id="searchP" class="formbold-form-step">
                     <h1>Search Results</h1>
                     <div style="display: flex; flex-direction: column;">
                       <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px; padding: 15px 20px; text-align: center; border-radius: 8px; box-shadow: 0px 2px 40px -15px #70afd0; border: 1px solid #70afd0; color: #2e6c8e; font-weight: 700; font-size: 13pt;">
                           <img height="50px" src="https://beebom.com/wp-content/uploads/2018/12/Lufthansa-Logo.jpg" alt="">
-                          <span>6:30</span>
-                          <img width="50px" src="./airplane.png" alt="">
-                          <span>8:45</span>
-                          <button onclick="Ticket(),next()"  type="button" class="next-btn">Next Step</button>
+                          <span id="btn1"> 6:30 <img width="170px" src="Screenshot 2024-11-13 094106.png" alt=""> 8:45 </span>
+                          <button  onclick="Ticket(),next(),check(1)"  type="button" class="next-btn">Next Step</button>
                       </div>
                       <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px; padding: 15px 20px; text-align: center; border-radius: 8px; box-shadow: 0px 2px 40px -15px #70afd0; border: 1px solid #70afd0; color: #2e6c8e; font-weight: 700; font-size: 13pt;">
                           <img height="50px" src="https://beebom.com/wp-content/uploads/2018/12/Lufthansa-Logo.jpg" alt="">
-                          <span>6:30</span>
-                          <img width="50px" src="./airplane.png" alt="">
-                          <span>8:45</span>
-                          <button onclick="Ticket(),next()"  type="button" class="next-btn">Next Step</button>
+                          <span id="btn2"> 10:30 <img width="170px" src="Screenshot 2024-11-13 094106.png" alt=""> 13:45 </span>
+                          <button  onclick="Ticket(),next(),check(2)"  type="button" class="next-btn">Next Step</button>
 
                       </div>
-                      <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px; padding: 15px 20px; text-align: center; border-radius: 8px; box-shadow: 0px 2px 40px -15px #70afd0; border: 1px solid #70afd0; color: #2e6c8e; font-weight: 700; font-size: 13pt;">
+                      <div  style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px; padding: 15px 20px; text-align: center; border-radius: 8px; box-shadow: 0px 2px 40px -15px #70afd0; border: 1px solid #70afd0; color: #2e6c8e; font-weight: 700; font-size: 13pt;">
                           <img height="50px" src="https://beebom.com/wp-content/uploads/2018/12/Lufthansa-Logo.jpg" alt="">
-                          <span>6:30</span>
-                          <img width="50px" src="./airplane.png" alt="">
-                          <span>8:45</span>
-                          <button onclick="Ticket(),next()"  type="button" class="next-btn">Next Step</button>
+                          <span id="btn3"> 14:30 <img width="170px" src="Screenshot 2024-11-13 094106.png" alt=""> 17:45 </span>
+                          <button  onclick="Ticket(),next(),check(3)"  type="button" class="next-btn">Next Step</button>
 
                       </div>
                     </div>
@@ -187,7 +182,7 @@
 
                 <div class="formbold-form-btn-wrapper">
                     <button onclick="Delet(),back()" type="button" class="formbold-back-btn">Back</button>
-                    <button onclick="Ticket(),next()"  type="button" class="formbold-next-btn">Next Step</button>
+                    <button onclick="Ticket(),next(),DateValidation()"  type="button" class="formbold-next-btn">Next Step</button>
                 </div>
             </form>
         </div>

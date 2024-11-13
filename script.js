@@ -19,6 +19,8 @@ function next() {
         formSteps[currentStep].classList.add('active');
     }
     updateButtons();
+    console.log(span);
+
 };
 
 function back() {
@@ -73,7 +75,7 @@ function Plus1(){
     let adultnum = parseInt(document.getElementById("number1").textContent);
     let kidsnum = parseInt(document.getElementById("number2").textContent);
 
-    if (adultnum + kidsnum < 8){
+    if (adultnum + kidsnum < 16){
         let number1 = document.getElementById("number1");
         let prix = document.getElementById("Total");
         prix.textContent = parseInt(prix.textContent) + 500;
@@ -86,7 +88,7 @@ function Plus2(){
     let adultnum = parseInt(document.getElementById("number1").textContent);
     let kidsnum = parseInt(document.getElementById("number2").textContent);
 
-    if (adultnum + kidsnum < 8){
+    if (adultnum + kidsnum < 16){
         let number2 = document.getElementById("number2");
         let prix = document.getElementById("Total");
         prix.textContent = parseInt(prix.textContent) + 100;
@@ -141,8 +143,10 @@ function ChangeS(id) {
         }
     }
 }
-
-
+let span;
+function check(id){
+    span = document.getElementById("btn" + id).textContent;
+}
 
 
 
@@ -167,6 +171,7 @@ function Ticket() {
             let card = document.getElementById("card");
             let div = document.createElement("div");
             div.setAttribute("class", "Ticket");
+            div.setAttribute("id", "Ticket"+i);
             card.appendChild(div);
         
             let from = document.createElement("p");
@@ -186,12 +191,21 @@ function Ticket() {
             div.appendChild(to);
         
             let date = document.createElement("p");
-            date.innerHTML = "Date de réservation :"
+            date.innerHTML = "Date :"
             let dspan = document.createElement("span");
             dspan.setAttribute("id", "edate");
             dspan.textContent = Date;
             date.appendChild(dspan);
             div.appendChild(date);
+
+
+            let time = document.createElement("p");
+            time.innerHTML = "Time : "
+            let timespan = document.createElement("span");
+            timespan.setAttribute("id", "time");
+            timespan.textContent = span;
+            time.appendChild(timespan);
+            div.appendChild(time);
 
             let seat = document.createElement("p");
             seat.innerHTML = "seat number : "
@@ -206,7 +220,7 @@ function Ticket() {
             Prix.innerHTML = "Prix : "
             let pspan = document.createElement("span");
             pspan.setAttribute("id", "prix");
-            pspan.textContent = "500";
+            pspan.textContent = "500 DH";
             Prix.appendChild(pspan);
             div.appendChild(Prix);
         
@@ -215,13 +229,22 @@ function Ticket() {
             qrContainer.setAttribute("id", "qrcode");
             div.appendChild(qrContainer);
         
-            let qrData = `From: ${Depar}, To: ${Arriv}, Date: ${Date}, Price: ${prix}`;
+            let qrData = `From: ${Depar}, To: ${Arriv}, Date: ${Date}, Price: 500, Seat: ${elements[i].textContent}`;
         
             new QRCode(qrContainer, {
                 text: qrData,
                 width: 100,    
                 height: 100,   
             });
+            
+            let button = document.createElement("button");
+            button.innerHTML = "⇓";
+            button.setAttribute("type", "button");
+            button.setAttribute("id", "downloadButton" + i);
+            button.setAttribute("onclick", `downloadCardAsPDF(${i})`);
+            div.appendChild(button);
+
+
             
          }
         for (let i=adultnum  ; i < kidsnum+adultnum; i++){
@@ -231,6 +254,7 @@ function Ticket() {
             card.setAttribute("class","Ticket-card")
             let div = document.createElement("div");
             div.setAttribute("class", "Ticket");
+            div.setAttribute("id", "Ticket"+i);
             card.appendChild(div);
         
             let from = document.createElement("p");
@@ -250,13 +274,21 @@ function Ticket() {
             div.appendChild(to);
         
             let date = document.createElement("p");
-            date.innerHTML = "Date de réservation :"
+            date.innerHTML = "Date :"
             let dspan = document.createElement("span");
             dspan.setAttribute("id", "edate");
             dspan.textContent = Date;
             date.appendChild(dspan);
             div.appendChild(date);
 
+            let time = document.createElement("p");
+            time.innerHTML = "Time : "
+            let timespan = document.createElement("span");
+            timespan.setAttribute("id", "time");
+            timespan.textContent = span
+            time.appendChild(timespan);
+            div.appendChild(time);
+            
             let seat = document.createElement("p");
             seat.innerHTML = "seat number : "
             let seatspan = document.createElement("span");
@@ -264,12 +296,13 @@ function Ticket() {
             seatspan.textContent = elements[i].textContent;
             seat.appendChild(seatspan);
             div.appendChild(seat);
+
         
             let Prix = document.createElement("p");
             Prix.innerHTML = "Prix : "
             let pspan = document.createElement("span");
             pspan.setAttribute("id", "prix");
-            pspan.textContent = "100";
+            pspan.textContent = "100 DH";
             Prix.appendChild(pspan);
             div.appendChild(Prix);
         
@@ -278,18 +311,38 @@ function Ticket() {
             qrContainer.setAttribute("id", "qrcode");
             div.appendChild(qrContainer);
         
-            let qrData = `From: ${Depar}, To: ${Arriv}, Date: ${Date}, Price: ${prix}`;
+            let qrData = `From: ${Depar}, To: ${Arriv}, Date: ${Date}, Price: 100, Seat: ${elements[i].textContent}`;
         
             new QRCode(qrContainer, {
                 text: qrData,
                 width: 100,    
                 height: 100,   
             });
-        }
-        
+            
+
+            let button = document.createElement("button");
+            button.innerHTML = "⇓";
+            button.setAttribute("type", "button");
+            button.setAttribute("onclick", `downloadCardAsPDF(${i})`);
+            div.appendChild(button);
+        }       
+}
 }
 
+function downloadCardAsPDF(i) {
+    const cardElement = document.getElementById("Ticket"+i);
+    const options = {
+        margin: 0.1, 
+        filename: 'ticket.pdf',
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 1.5 }, 
+        jsPDF: { unit: 'in', format: [5.5, 3.5], orientation: 'portrait' }
+    };
+    html2pdf().set(options).from(cardElement).save();    
 }
+
+
+
 
 function Delet() {
     let Tickets = document.getElementsByClassName('Ticket-card'); 
@@ -303,4 +356,22 @@ function switsh(){
     document.getElementById("depar").value=  document.getElementById("arrive").value;
     document.getElementById("arrive").value= temp;
 }
+
+function DateValidation() {
+
+    let date = document.getElementById("date").value;
+
+    const inputDate = new Date(date);
+
+    const comparisonDate = new Date("2024-11-20");
+
+    if (inputDate < comparisonDate) {
+        let page = document.getElementById("searchP");
+        page.setAttribute("style", "display: none;");
+    } else{
+        let page = document.getElementById("searchP");
+        page.setAttribute("style", "");
+    }
+}
+
 
